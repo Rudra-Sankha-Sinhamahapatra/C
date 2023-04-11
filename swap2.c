@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main() {
+int a,b;
+
+printf("Enter a\n");
+scanf("%d",&a);
+printf("Enter b\n");
+scanf("%d",&b);
+printf("Before Swapping The Value of a is %d and b is %d\n",a,b);
+
+
+printf("After Swappping a is %d and  b is %d \n",b,a);
+return 0;
+}
