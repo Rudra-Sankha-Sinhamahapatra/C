@@ -1,4 +1,5 @@
 #include <stdio.h>
+//reverse a string using pointers
 
 void reverseString(char* str) {
     char* start = str;
