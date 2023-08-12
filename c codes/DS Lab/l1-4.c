@@ -47,13 +47,14 @@ int main() {
     scanf("%lf %lf", &num2.real, &num2.imag);
 
     int choice;
-    do {
+    
         printf("\nMENU\n");
         printf("1. Addition\n");
         printf("2. Multiplication\n");
+        do{
         printf("Enter your choice: "); 
         scanf("%d", &choice);
-
+       
         switch (choice) {
             case 1:
                 result = addComplex(num1, num2);
@@ -61,13 +62,16 @@ int main() {
                 break;
             case 2:
                 multiplyComplex(&num1, &num2, &result);
-                printf("Product = %.2lf + %.2lfi\n", result.real, result.imag);
+                printf("Multiplication = %.2lf + %.2lfi\n", result.real, result.imag);
                 break;
+             
             default:
                 printf("Invalid choice. Please select again.\n");
         }
-
-    } while (choice == 1 || choice == 2);
+        }while (choice ==1 || choice ==2);
+        
+        
+    
 
     return 0;
 }
