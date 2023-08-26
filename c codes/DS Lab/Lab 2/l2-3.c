@@ -21,7 +21,7 @@ int main ()
 printf("enter number of rows and coloumns");
 scanf("%d %d",&r,&c);
 int arr[r][c];
-printf("enter the array elements\n");
+printf("enter the array elements of the sparse matrix\n");
 for (int i = 0; i < r; i++)
 {
    for ( int j = 0; j < c; j++)
