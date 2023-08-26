@@ -18,8 +18,7 @@
 // Upper triangular matrix:
 // 2 1 0
 // 7 6
-// 4
-
+//   4
 #include <stdio.h>
 
 
