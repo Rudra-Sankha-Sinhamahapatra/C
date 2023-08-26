@@ -29,13 +29,13 @@ for (int i = 0; i < r; i++)
     scanf("%d",&arr[i][j]);
    } 
 }
-printf("the sparse matrix of the following is:\n");
+printf("the tuple format of the sparse matrix of the following is:\n");
 for (int i = 0; i < r; i++)
 {
    for ( int j = 0; j < c; j++)
    {
    if(arr[i][j]!=0){
-    printf("\n %d %d %d",i+1,j+1,arr[i][j]);
+    printf("\n %d %d %d",i,j,arr[i][j]); //row is i and column is j and value is arr[i][j]
    }
    } 
 }
