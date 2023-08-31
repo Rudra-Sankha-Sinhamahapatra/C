@@ -9,14 +9,12 @@ struct Node {
 
 
 void insertAtBeginning(struct Node** headRef, int newData) {
-
+    
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     
-   
     newNode->data = newData;
     newNode->next = *headRef;
     
-   
     *headRef = newNode;
 }
 
@@ -37,7 +35,7 @@ int main() {
     insertAtBeginning(&head, 2);
     insertAtBeginning(&head, 1);
     
-    
+
     printf("Linked list: ");
     printList(head);
     
