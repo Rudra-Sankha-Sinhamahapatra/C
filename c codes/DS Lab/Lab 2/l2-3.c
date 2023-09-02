@@ -15,7 +15,7 @@
 #include <stdio.h>
 
 int main() {
-    int i, j, r, c, count = 0, r1 = 1, c1 = 0, temp, row, column, arr[10][10];
+    int i, j, r, c, count = 0, r1 = 1, c1 = 0,arr[10][10];
     
     printf("Enter the size of the sparse matrix (rows columns): ");
     scanf("%d %d", &r, &c);
