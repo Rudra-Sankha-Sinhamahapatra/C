@@ -12,54 +12,46 @@
 // 1   1   17
 // 2   3   46
 // 3   4   51
-
 #include <stdio.h>
-void run(int, int);
-int main()
-{
- int i,j,r,c,count=0,r1=0,c1=0,temp,row,column,arr[10][10];
- printf("Enter the number of rows and the no. of columns:");
- scanf("%d %d",&r,&c);
- printf("Enter the sparse matrix:");
- for(i=0;i<r;i++)
- {
-  for(j=0;j<c;j++)
-  {
-   scanf("%d",&arr[i][j]);
-   if(arr[i][j]!=0)
-   count++;
-  }
- }
- for(i=0;i<r;i++)
- {
-  for(j=0;j<c;j++)
-  {
-   if(arr[i][j]!=0)
-   {
-    temp=arr[i][j];
-    arr[r1][c1]=i;
-    c1++;
-    arr[r1][c1]=j;
-    c1++;
-    arr[r1][c1]=temp;
-  }
-  }
-  r1++;
-  c1=0;
- }
- c1=0;
- printf("3 tuple format is :");
- for(i=0;i<r+1;i++)
- {
-  for(j=0;j<3;j++)
-  {
-   if(c1==0)
-   {
+
+int main() {
+    int i, j, r, c, count = 0, r1 = 1, c1 = 0, temp, row, column, arr[10][10];
     
-   printf(" %d",arr[i][j]);
-  }
-  printf("\n");  
- }  
- return 0;
- }
+    printf("Enter the size of the sparse matrix (rows columns): ");
+    scanf("%d %d", &r, &c);
+    
+    printf("Enter elements of the sparse matrix:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            scanf("%d", &arr[i][j]);
+            if (arr[i][j] != 0)
+                count++;
+        }
+    }
+    
+    int sparse[count + 1][3];
+    sparse[0][0] = r;
+    sparse[0][1] = c;
+    sparse[0][2] = count;
+    
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            if (arr[i][j] != 0) {
+                sparse[r1][0] = i;
+                sparse[r1][1] = j;
+                sparse[r1][2] = arr[i][j];
+                r1++;
+            }
+        }
+    }
+    
+    printf("Sparse matrix in 3-tuple format:\n");
+    for (i = 0; i <= count; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", sparse[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
 }
