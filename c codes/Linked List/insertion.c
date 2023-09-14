@@ -42,6 +42,32 @@ struct Node *insertAtIndex(struct Node *head, int data, int index)
     p->next = ptr;
     return head;
 };
+
+struct Node *insertAtEnd(struct Node *head, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+      struct Node *p = head;
+ptr->data=data;
+
+    while(p->next!=NULL){
+     p=p->next;
+    }
+    p->next=ptr;
+    ptr->next=NULL;
+    printf("Linked List after insertion at last: ");
+    return head;
+};
+
+struct Node *insertAfterNode(struct Node *head,struct Node * prevNode, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+ptr->data=data;
+ptr->next=prevNode->next;
+ prevNode->next=ptr;
+  printf("Linked List after inserting a particular node: ");
+    return head;
+};
+
 int main()
 {
     struct Node *head;
@@ -74,7 +100,9 @@ int main()
     printf("Linked List: ");
     printLinkedList(head);
     // head=insertAtBeginning(head,24);
-    head = insertAtIndex(head, 24, 2);
+    // head = insertAtIndex(head, 24, 2);
+    // head=insertAtEnd(head,24);
+    head=insertAfterNode(head,second,24);
     printLinkedList(head);
     free(head);
     free(second);
