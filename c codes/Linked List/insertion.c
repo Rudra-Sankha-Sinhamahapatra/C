@@ -18,27 +18,29 @@ void printLinkedList(struct Node *head)
     printf("NULL\n");
 }
 
-struct Node * insertAtBeginning(struct Node * head,int data){
-  struct Node * ptr=(struct Node *) malloc( sizeof(struct Node));
-  ptr->next=head;
-  ptr->data=data;
-  printf("Linked list after inserting %d at beginning: ",data);
-  return ptr;
+struct Node *insertAtBeginning(struct Node *head, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    ptr->next = head;
+    ptr->data = data;
+    printf("Linked list after inserting %d at beginning: ", data);
+    return ptr;
 };
 
-struct Node * insertAtIndex(struct Node * head,int data,int middle){
-struct Node * ptr=(struct Node *) malloc( sizeof(struct Node));
-struct Node * p= head;
-int i=0;
-while (i!=middle-1)
+struct Node *insertAtIndex(struct Node *head, int data, int index)
 {
-    p=p->next;
-    i++;
-}
-ptr->data=data;
-ptr->next= p->next;
-p->next=ptr;
-return head;
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *p = head;
+    int i = 0;
+    while (i != index - 1)
+    {
+        p = p->next;
+        i++;
+    }
+    ptr->data = data;
+    ptr->next = p->next;
+    p->next = ptr;
+    return head;
 };
 int main()
 {
@@ -72,8 +74,8 @@ int main()
     printf("Linked List: ");
     printLinkedList(head);
     // head=insertAtBeginning(head,24);
-    head=insertAtIndex(head,24,2);
-       printLinkedList(head);
+    head = insertAtIndex(head, 24, 2);
+    printLinkedList(head);
     free(head);
     free(second);
     free(third);
