@@ -27,6 +27,24 @@ struct Node *deleteFromBeginning(struct Node *head)
     return head;
 };
 
+struct Node * deleteFromIndex(struct Node *head,int position){
+    struct Node *ptr=head;
+    struct Node *p = NULL;
+    int i=0;
+    if(position==1){
+        head=deleteFromBeginning(head);
+    }
+    while(i<position-1 && ptr!=NULL){
+        p=ptr;
+        ptr=ptr->next;
+        i++;
+    }
+    p->next=ptr->next;
+    free(ptr);
+    printf("Linked List after deleting from %d position: ",position);
+    return head;
+};
+
 int main()
 {
     struct Node *head;
@@ -61,7 +79,8 @@ int main()
     // head=insertAtBeginning(head,24);
     // head = insertAtIndex(head, 24, 2);
     // head=insertAtEnd(head,24);
-    head = deleteFromBeginning(head);
+    // head = deleteFromBeginning(head);
+    head=deleteFromIndex(head,4);
     printLinkedList(head);
 
     free(head);
