@@ -31,6 +31,9 @@ struct Node * deleteFromIndex(struct Node *head,int position){
     struct Node *ptr=head;
     struct Node *p = NULL;
     int i=0;
+    if(head==NULL){
+    printf("NULL Linked LIst");
+    }
     if(position==1){
         head=deleteFromBeginning(head);
     }
