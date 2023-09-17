@@ -107,9 +107,7 @@ int main()
 
     printf("Linked List: ");
     printLinkedList(head);
-    // head=insertAtBeginning(head,24);
-    // head = insertAtIndex(head, 24, 2);
-    // head=insertAtEnd(head,24);
+
     // head = deleteFromBeginning(head);
     // head=deleteFromIndex(head,4);
     // head=deleteFromEnd(head);
