@@ -45,6 +45,37 @@ struct Node * deleteFromIndex(struct Node *head,int position){
     return head;
 };
 
+struct Node * deleteFromEnd(struct Node * head){
+struct  Node *ptr=head;
+struct Node *p=NULL;
+while(ptr->next!=NULL){
+    p=ptr;
+ptr=ptr->next;
+}
+p->next=ptr->next;
+free(ptr);
+printf("Linked List After Deleting the last node: ");
+return head;
+};
+
+struct Node * deleteAfteraNode(struct Node * head,struct Node * choice)
+{
+    struct Node *ptr=head;
+    struct Node *p=NULL;
+    while(ptr->next!=choice){
+        p=ptr;
+    ptr=ptr->next;
+    }
+    ptr=ptr->next;
+    p=ptr;
+    ptr=ptr->next;
+    p->next=ptr->next;
+    free(ptr);
+    printf("Linked List After Deleting the Node After the selected Node is: ");
+    return head;
+};
+
+
 int main()
 {
     struct Node *head;
@@ -80,7 +111,9 @@ int main()
     // head = insertAtIndex(head, 24, 2);
     // head=insertAtEnd(head,24);
     // head = deleteFromBeginning(head);
-    head=deleteFromIndex(head,4);
+    // head=deleteFromIndex(head,4);
+    // head=deleteFromEnd(head);
+    head=deleteAfteraNode(head,second);
     printLinkedList(head);
 
     free(head);
