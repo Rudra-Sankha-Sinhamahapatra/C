@@ -26,11 +26,22 @@ int isEmpty(struct Stack * ptr){
 }
 void push(struct Stack *ptr,int val){
     if(isFull(ptr)){
-        printf("Stack Overflow\n");
+        printf("Stack Overflow! Cannot push %d to the stack\n",val);
     }
     else{
         ptr->top++;
         ptr->arr[ptr->top]=val;
+    }
+}
+
+int pop(struct Stack *ptr){
+    if(isFull(ptr)){
+        printf("Stack Underflow! Cannot pop  from the stack\n");
+       return -1;
+    }
+    else{
+      int val=ptr->arr[ptr->top];
+      ptr->top--;
     }
 }
 
@@ -43,18 +54,20 @@ printf("Stack has been created succesfully\n");
 printf("Before Pushing,Full:%d\n",isFull(sp));
 printf("Before Pushing,Empty:%d\n",isEmpty(sp));
 
+push(sp,1);
+push(sp,56);
+push(sp,16);
 push(sp,56);
 push(sp,56);
 push(sp,56);
+push(sp,57);
 push(sp,56);
 push(sp,56);
-push(sp,56);
-push(sp,56);
-push(sp,56);
-push(sp,56);
-push(sp,56);
-push(sp,56);
+push(sp,56);//pushed 10 values
+push(sp,56);//Stack Overflow since the size of the stack is 10
+
 printf("After Pushing,Full: %d\n",isFull(sp));
 printf("After Pushing,Empty: %d\n",isEmpty(sp));
+printf("Popped %d drom the stack\n",pop(sp)); //Last in First Out
 return 0;
 }
