@@ -55,6 +55,6 @@ push(sp,56);
 push(sp,56);
 push(sp,56);
 printf("After Pushing,Full: %d\n",isFull(sp));
-printf("After Pushing,Empty:%d\n",isEmpty(sp));
+printf("After Pushing,Empty: %d\n",isEmpty(sp));
 return 0;
 }
