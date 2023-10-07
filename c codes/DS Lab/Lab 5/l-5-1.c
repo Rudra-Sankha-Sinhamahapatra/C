@@ -1,3 +1,24 @@
+// 5.1 Write a program to create a double linked list and perform the following menu based operations on it:
+// i. insert an element at specific position
+// ii. delete an element from specific position
+// iii. Traverse the list
+// Sample Input/Output:
+// Enter number of nodes: 5
+// Enter the elements: 17 23 47 11 78 92 51
+// MENU:
+// 1. Insert the node at a position
+// 2. Delete a node from specific position
+// 3. Traversal
+// 5. Exit
+// Enter choice: 1
+// Enter element: 66
+// Enter position: 2
+// Node inserted
+// Enter choice: 3
+// The list is: 17-&gt; 66-&gt;23-&gt; 47-&gt; 11-&gt; 78-&gt; 92-&gt; 51
+// Note: Other menu choices are similarly needs to verify.
+
+
 #include <stdio.h>
 #include <stdlib.h>
 

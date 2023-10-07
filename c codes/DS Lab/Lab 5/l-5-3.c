@@ -1,3 +1,17 @@
+// 5.3 Write a program to represent the given sparse matrix using header single linked list and
+// display it.
+// Sample Input:
+
+// Enter size of the sparse matrix: 4 5
+// Enter elements of sparse matrix: 0 0 33 0 0 0 17 0 0 0 0 0 0 46 0 0 0 0 0 51
+// Sample Output:
+// sparse matrix in 3-tuple format
+// 4 5 4
+// 0 2 33
+// 1 1 17
+// 2 3 46
+// 3 4 51
+
 #include <stdio.h>
 #include <stdlib.h>
 

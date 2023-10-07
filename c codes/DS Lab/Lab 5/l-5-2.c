@@ -1,3 +1,14 @@
+// 5.2 Write a program to create a circular linked list and display the elements of the list.
+// Sample Input:
+// Enter no.of nodes: 5
+// Enter info of node1: 30
+// Enter info of node1: 50
+// Enter info of node1: 40
+// Enter info of node1: 20
+// Enter info of node1: 70
+// Sample Output:
+// Clinkedlist: 30 50 40 20 70
+
 #include <stdio.h>
 #include <stdlib.h>
 
