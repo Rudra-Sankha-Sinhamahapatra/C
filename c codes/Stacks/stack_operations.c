@@ -35,13 +35,14 @@ void push(struct Stack *ptr,int val){
 }
 
 int pop(struct Stack *ptr){
-    if(isFull(ptr)){
+    if(isEmpty(ptr)){
         printf("Stack Underflow! Cannot pop  from the stack\n");
        return -1;
     }
     else{
       int val=ptr->arr[ptr->top];
       ptr->top--;
+      return val;
     }
 }
 
