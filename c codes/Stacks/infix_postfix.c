@@ -31,7 +31,7 @@ int isOperator(char ch)
             || ch == '^'); 
 } 
   
-// Main functio to convert infix expression 
+// Main function to convert infix expression 
 // to postfix expression 
 char* infixToPostfix(char* infix) 
 { 
