@@ -9,8 +9,8 @@ int enqueue(int data){
      queue[rear]=data;
 }
 int dequeue(){
-    int x=queue[front];
     front++;
+   int x=queue[front];
     return x;
 }
 void display(){
@@ -19,7 +19,6 @@ void display(){
     }
 }
 int main() {
-dequeue();
 enqueue(3);
 enqueue(2);
 display();
