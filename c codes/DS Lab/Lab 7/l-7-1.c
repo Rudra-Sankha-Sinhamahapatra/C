@@ -1,3 +1,27 @@
+// 7.1 Write a menu driven program to create a linear queue using array and perform Enqueue, Dequeue,
+// Traverse, IsEmpty, IsFull operations.
+// Sample Input/Output:
+// Enter the size of Queue: 5
+// Main Menu
+// 1. Enqueue
+// 2. Dequeue
+// 3. IsEmpty
+// 4. IsFull
+// 5. Traverse
+// 6. Exit
+// Enter option: 1
+// Enter element: 15
+// Enter option: 1
+// Enter element: 23
+// Enter option: 1
+// Enter element: 40
+// Enter option: 5
+// Queue: 15 23 40
+// Enter option: 2
+// Element deleted
+// Enter option: 5
+// Queue: 23 40
+
 #include <stdio.h>
 #include <stdlib.h>
 #define max 10
