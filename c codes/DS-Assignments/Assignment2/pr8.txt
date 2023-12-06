@@ -1,0 +1,29 @@
+8. A sorting technique was applied to the following data set 44,
+11, 66,33,55,99
+After two passes the rearrangement of the data set is as
+follows 11, 33, 66, 44, 55, 99.   Identify the sorting method used
+and find the arrangement of the data set
+
+
+
+
+The rearrangement of the data set after two passes, where each pass involves comparing and swapping adjacent elements, indicates that a variant of the **Bubble Sort** sorting method is being used.
+
+Bubble Sort works by repeatedly stepping through the list of elements, comparing adjacent elements, and swapping them if they are in the wrong order. The process is repeated until the list is sorted.
+
+Here's the arrangement after the second pass:
+\[11, 33, 66, 44, 55, 99\]
+
+Now, let's identify the arrangement after the third pass:
+
+Pass 3:
+1. Compare and swap 11 and 33 (no change).
+2. Compare and swap 33 and 66 (no change).
+3. Compare and swap 66 and 44 (swap to get (11, 33, 44, 66, 55, 99)).
+4. Compare and swap 66 and 55 (swap to get (11, 33, 44, 55, 66, 99)).
+5. Compare and swap 66 and 99 (no change).
+
+After the third pass, the arrangement of the data set is:
+[11, 33, 44, 55, 66, 99]
+
+The list is now sorted, and no further passes are needed.

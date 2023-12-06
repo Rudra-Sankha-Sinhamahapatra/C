@@ -1,0 +1,50 @@
+A priority queue is a data structure that stores elements with associated priorities and allows elements with higher priorities to be served before elements with lower priorities. A heap is a specialized tree-based data structure that satisfies the heap property, which is a condition that ensures efficient extraction of the element with the highest (or lowest) priority.
+
+A priority queue can be efficiently implemented using a heap, specifically a binary heap, due to its simplicity and efficient operations. There are two types of binary heaps: max-heap and min-heap. In a max-heap, the element with the highest priority (maximum value) is at the root, while in a min-heap, the element with the lowest priority (minimum value) is at the root.
+
+### Priority Queue Operations Using Heap:
+
+1. **Insertion (Enqueue):**
+   - To insert an element into the priority queue, it is placed at the bottom of the heap (last level) without violating the heap property.
+   - After insertion, the heap property is restored by "bubbling up" or "heapifying up" the element to its correct position.
+
+2. **Deletion (Dequeue):**
+   - To remove the element with the highest priority, the root is extracted.
+   - The last element of the heap is moved to the root, and the heap property is restored by "bubbling down" or "heapifying down" the element to its correct position.
+
+### Example:
+
+Consider a max-heap representing a max-priority queue:
+
+```
+            40
+          /    \
+        25      35
+       /  \    /  \
+      10  15  20  30
+```
+
+1. **Insertion:**
+   - Insert 45 at the bottom.
+   - Heapify up: Swap 45 with its parent 35.
+   ```
+            45
+          /    \
+        25      40
+       /  \    /  \
+      10  15  20  30
+   ```
+
+2. **Deletion:**
+   - Extract the root (45).
+   - Move the last element (30) to the root.
+   - Heapify down: Swap 30 with its larger child (40).
+   ```
+            40
+          /    \
+        25      30
+       /  \    /  \
+      10  15  20
+   ```
+
+In this way, the heap ensures that the highest priority element is always at the root, and the structure of the heap allows for efficient insertion and removal of elements. The time complexity for insertion and deletion in a binary heap is O(log n), making it a suitable choice for implementing priority queues.

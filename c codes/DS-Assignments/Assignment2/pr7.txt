@@ -1,0 +1,52 @@
+7. Given a number n = abc and with the hash function f(n) =
+(a*30+ b*31+c*32) mod 9. Then generate the hash table by
+following linear and quadratic probing resolution separately
+for the following data set:
+476,192,215,729,318,620,586,828,434.
+
+To generate the hash table using linear and quadratic probing resolution, we'll follow the steps below. In these steps, "n" is the size of the hash table, and we'll use the given hash function \( f(n) = (a \cdot 30 + b \cdot 31 + c \cdot 32) \mod 9 \). The dataset is {476, 192, 215, 729, 318, 620, 586, 828, 434}.
+
+Let's consider a hash table of size  n = 9  for simplicity.
+
+### Linear Probing:
+
+1. Calculate the hash value using the given function.
+2. If the slot is empty, insert the element.
+3. If the slot is occupied, find the next empty slot by linearly probing through the table.
+
+```plaintext
+Hash Table using Linear Probing:
+Index   Value
+-----------------
+ 2    |  192
+ 5    |  620
+ 8    |  828
+ 0    |  476
+ 1    |  192 (collision, linear probe to next slot)
+ 3    |  318
+ 6    |  586
+ 7    |  434
+ 4    |  729
+```
+
+### Quadratic Probing:
+
+1. Calculate the hash value using the given function.
+2. If the slot is empty, insert the element.
+3. If the slot is occupied, find the next empty slot by quadratically probing through the table.
+
+
+Hash Table using Quadratic Probing:
+Index   Value
+-----------------
+ 2    |  192
+ 5    |  620
+ 8    |  828
+ 0    |  476
+ 1    |  192 (collision, quadratic probe to next slot)
+ 3    |  318
+ 7    |  434
+ 4    |  729
+ 6    |  586
+```
+

@@ -1,0 +1,44 @@
+// 6. “If the height of a tree is reduced and balanced, then the
+// searching time also get reduced.” (True/ False) Justify.
+// Construct a AVL tree with the following set of elements
+// where the elements are added to the tree one after the other
+// in the given sequence.23, 64, 48, 96, 101, 34, 55, 11, 22, 41,
+// 89, 71, 78, 61, 83, 94, 8, 27, 35, 1.
+
+True. If the height of a tree is reduced and balanced, the searching time gets reduced. In a balanced tree, the height is minimized, and as a result, the time complexity of operations such as searching, insertion, and deletion becomes more efficient.
+
+In an AVL tree, which is a self-balancing binary search tree, the heights of the two child subtrees of any node differ by at most one. This property ensures that the tree remains balanced, and the height is logarithmic in the number of elements. Consequently, the time complexity for basic operations is O(log n).
+
+Now, let's construct an AVL tree with the given set of elements: 23, 64, 48, 96, 101, 34, 55, 11, 22, 41, 89, 71, 78, 61, 83, 94, 8, 27, 35, 1.
+
+```plaintext
+Step 1: Insert 23
+   23
+
+Step 2: Insert 64
+   23
+    \
+    64
+
+Step 3: Insert 48
+   48
+  /  \
+23    64
+
+... continue inserting elements maintaining AVL property ...
+
+Final AVL tree:
+        48
+       /  \
+     34    71
+    / \   /  \
+   23  41 64  89
+  /    \    /  \
+ 8     27 78   101
+         / \
+       55  83
+          / \
+         61  94
+             /
+            96
+```

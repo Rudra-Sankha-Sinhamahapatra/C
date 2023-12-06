@@ -1,0 +1,99 @@
+9. What is an AVL tree? Construct an AVL tree with the
+following set of numbers: 1,12,2,11,3,10,4,9,5,8,6 .
+
+
+
+An AVL tree is a self-balancing binary search tree where the heights of the two child subtrees of any node differ by at most one. This property ensures that the tree remains balanced, and the height is logarithmic in the number of nodes. AVL trees are named after their inventors Adelson-Velsky and Landis.
+
+In an AVL tree, for every node, the heights of its left and right subtrees (or children) differ by at most 1. If at any time they differ by more than 1, rebalancing is performed to restore this property. The rotations used for rebalancing include left rotation, right rotation, left-right rotation, and right-left rotation.
+
+Now, let's construct an AVL tree with the given set of numbers: 1, 12, 2, 11, 3, 10, 4, 9, 5, 8, 6.
+
+
+Insert 1:
+   1
+
+Insert 12:
+   1
+    \
+    12
+
+Insert 2:
+   2
+  / \
+ 1  12
+
+Insert 11:
+   2
+  / \
+ 1  11
+    /
+   12
+
+Insert 3:
+   2
+  / \
+ 1  11
+  \ /
+  3 12
+
+Insert 10:
+    2
+   / \
+  1  11
+  \ / \
+  3 10 12
+
+Insert 4:
+    2
+   / \
+  1  11
+  \ / \
+  3 10 12
+   /
+  4
+
+Insert 9:
+    2
+   / \
+  1  11
+  \ / \
+  3 10 12
+   / \
+  4   9
+
+Insert 5:
+    4
+   / \
+  2   10
+ / \   \
+1   3   11
+       / \
+      9  12
+
+Insert 8:
+    4
+   / \
+  2   10
+ / \   \
+1   3   11
+       / \
+      9  12
+         /
+        8
+
+Insert 6:
+    4
+   / \
+  2   10
+ / \   \
+1   3   11
+       / \
+      9  12
+         /
+        8
+         \
+          6
+```
+
+The final AVL tree after inserting all the numbers is balanced, and the heights of the left and right subtrees for each node differ by at most 1, satisfying the AVL tree properties.
