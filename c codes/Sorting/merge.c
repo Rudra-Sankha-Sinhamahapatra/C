@@ -1,83 +1,84 @@
+// Merge sort in C
+
 #include <stdio.h>
 
-// Function to merge two subarrays arr[l..m] and arr[m+1..r]
-void merge(int arr[], int l, int m, int r) {
-    int i, j, k;
-    int n1 = m - l + 1;
-    int n2 = r - m;
+// Merge two subarrays L and M into arr
+void merge(int arr[], int p, int q, int r) {
 
-    // Create temporary arrays
-    int L[n1], R[n2];
+  // Create L ← A[p..q] and M ← A[q+1..r]
+  int n1 = q - p + 1;
+  int n2 = r - q;
 
-    // Copy data to temporary arrays L[] and R[]
-    for (i = 0; i < n1; i++)
-        L[i] = arr[l + i];
-    for (j = 0; j < n2; j++)
-        R[j] = arr[m + 1 + j];
+  int L[n1], M[n2];
 
-    // Merge the temporary arrays back into arr[l..r]
-    i = 0;
-    j = 0;
-    k = l;
-    while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
-            arr[k] = L[i];
-            i++;
-        } else {
-            arr[k] = R[j];
-            j++;
-        }
-        k++;
+  for (int i = 0; i < n1; i++)
+    L[i] = arr[p + i];
+  for (int j = 0; j < n2; j++)
+    M[j] = arr[q + 1 + j];
+
+  // Maintain current index of sub-arrays and main array
+  int i, j, k;
+  i = 0;
+  j = 0;
+  k = p;
+
+  // Until we reach either end of either L or M, pick larger among
+  // elements L and M and place them in the correct position at A[p..r]
+  while (i < n1 && j < n2) {
+    if (L[i] <= M[j]) {
+      arr[k] = L[i];
+      i++;
+    } else {
+      arr[k] = M[j];
+      j++;
     }
+    k++;
+  }
 
-    // Copy the remaining elements of L[], if there are any
-    while (i < n1) {
-        arr[k] = L[i];
-        i++;
-        k++;
-    }
+  // When we run out of elements in either L or M,
+  // pick up the remaining elements and put in A[p..r]
+  while (i < n1) {
+    arr[k] = L[i];
+    i++;
+    k++;
+  }
 
-    // Copy the remaining elements of R[], if there are any
-    while (j < n2) {
-        arr[k] = R[j];
-        j++;
-        k++;
-    }
+  while (j < n2) {
+    arr[k] = M[j];
+    j++;
+    k++;
+  }
 }
 
-// Function to perform merge sort on arr[l..r]
+// Divide the array into two subarrays, sort them and merge them
 void mergeSort(int arr[], int l, int r) {
-    if (l < r) {
-        // Same as (l+r)/2, but avoids overflow for large l and r
-        int m = l + (r - l) / 2;
+  if (l < r) {
 
-        // Sort first and second halves
-        mergeSort(arr, l, m);
-        mergeSort(arr, m + 1, r);
+    // m is the point where the array is divided into two subarrays
+    int m = l + (r - l) / 2;
 
-        // Merge the sorted halves
-        merge(arr, l, m, r);
-    }
+    mergeSort(arr, l, m);
+    mergeSort(arr, m + 1, r);
+
+    // Merge the sorted subarrays
+    merge(arr, l, m, r);
+  }
 }
 
-// Function to print an array
+// Print the array
 void printArray(int arr[], int size) {
-    for (int i = 0; i < size; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
+  for (int i = 0; i < size; i++)
+    printf("%d ", arr[i]);
+  printf("\n");
 }
 
+// Driver program
 int main() {
-    int arr[] = {12, 11, 13, 5, 6, 7};
-    int n = sizeof(arr) / sizeof(arr[0]);
+  int arr[] = {6, 5, 12, 10, 9, 1};
+  int size = sizeof(arr) / sizeof(arr[0]);
 
-    printf("Original array: \n");
-    printArray(arr, n);
+  mergeSort(arr, 0, size - 1);
 
-    mergeSort(arr, 0, n - 1);
-
-    printf("Sorted array: \n");
-    printArray(arr, n);
-
-    return 0;
+  printf("Sorted array: \n");
+  printArray(arr, size);
 }
