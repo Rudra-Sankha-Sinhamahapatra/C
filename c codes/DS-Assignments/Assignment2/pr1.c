@@ -40,7 +40,6 @@ void findPaths(struct TreeNode* root, int targetSum, struct PathNode* currentPat
 
 
     currentSum += root->val;
-
   
     if (currentSum == targetSum) {
         printPath(newNode);
