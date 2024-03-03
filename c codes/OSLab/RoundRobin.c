@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> 
 
 struct process { 
 	int pid; 
@@ -8,10 +8,11 @@ struct process {
     int wt;
     int tat;
     int rt;
-	int prev;
+    int prev;
 };
 
 struct process a[5];
+
 
 void avg(){
     float avgwt = 0, avgtat = 0, avgrt = 0;
