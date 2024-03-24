@@ -19,7 +19,6 @@ void signal(int *s){
 }
 
 void producer(int item){
-    // while(1){
         /* Item produced */
         wait(&empty);
         wait(&mutex);
@@ -30,11 +29,9 @@ void producer(int item){
 
         signal(&mutex);
         signal(&full);
-    // }
 }
 
 void consumer(){
-    // while(1){
         wait(&full);
         wait(&mutex);
 
@@ -45,7 +42,6 @@ void consumer(){
         signal(&mutex);
         signal(&empty);
         /* Item consumed */
-    // }
 }
 
 int main(){
