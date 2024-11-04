@@ -1,0 +1,15 @@
+#include<stdio.h>
+int swap(int *a,int *b){
+int temp=*a;
+*a=*b;
+*b=temp;
+}
+
+int main(int argc,char* argv[]){
+if(argc!=3){
+printf("Number of arguments should be 3 including program name");
+}
+return 0;
+}
+
+
